@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang = "en-US">
+    <head>
+        <title>JS Color-Game</title>
+        <meta charset="utf-8">
+    </head>
+    <body onload ="do_game()">
+        <script>
+            var target;
+            var color_input_text;
+            var color_input
+            var finished = false;
+            var guesses = 0;
+            var color = ["AliceBlue", "Beige", "CornflowerBlue", "DimGrey", "Khaki", "Linen", "PaleGoldenRod"];
+            function do_game(){
+                target = "Beige";
+                alert(target);
+                  while(!finished){
+                    color_input_text = prompt("I am looking for a color out of \n\n" + '"AliceBlue", "Beige", "CornflowerBlue", "DimGrey", "Khaki", "Linen", "PaleGoldenRod"\n\n' + "What is the color");
+                    guesses+=1;
+                    finished = check_guess();       
+                     }
+            }
+                     function check_guess(){
+                         if(color_input_text != target){
+                             return false;
+                         }
+                          alert("Yes Indeed! the color was " + target + ".\n\nIt took you " + guesses + " guesses to get the color!");
+    return true;   
+                     }
+        </script>
+    </body>
+</html>
